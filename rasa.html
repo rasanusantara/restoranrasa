@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Rumah Makan - Rasa Nusantara | Kelompok 4</title>
+    <meta name="description"
+        content="Website Resmi Rumah Makan Rasa Nusantara - Menyajikan Cita Rasa Otentik Kuliner Tradisional Indonesia & Minuman Segar. Tugas Kelas XII Kelompok 4.">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* ============================================================
+       CUSTOM STYLING & EFEK INTERAKTIF
+       ============================================================ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #dc3545;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero / Header Section (Bisa Ganti URL Gambar Background Google di bawah) */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* Card Styling */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Section Badge */
+        .menu-section-badge {
+            font-size: 1.1rem;
+            padding: 8px 18px;
+            border-radius: 30px;
+        }
+
+        /* Gallery Zoom Effect */
+        .gallery-img {
+            transition: transform 0.4s ease;
+            cursor: pointer;
+            object-fit: cover;
+            height: 220px;
+            width: 100%;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Section Padding */
+        section {
+            padding: 80px 0;
+        }
+
+        /* Divider Accent Line */
+        .section-title-line {
+            width: 60px;
+            height: 3px;
+            background-color: #dc3545;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarMain">
+
+    <!-- ============================================================
+       3. HEADER & 4. NAVIGATION BAR & 5. LOGO WEBSITE
+       ============================================================ -->
+    <nav id="navbarMain" class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#beranda">
+                <i class="bi bi-egg-fried text-danger fs-3 me-2"></i>
+                <span class="fw-bold text-dark">Rasa <span class="text-danger">Nusantara</span></span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link mx-2" href="#beranda"> Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#menu-makanan"> Menu Makanan & Minuman</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#paket-hemat"> Paket Hemat</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#galeri"> Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#tentang-kami"> Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#pemesanan"> Pemesanan</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2" href="#kontak"> Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ============================================================
+         MENU 1: BERANDA (Hero Section)
+         ============================================================ -->
+        <header id="beranda" class="hero-section">
+            <div class="container">
+                <h1 class="display-3 fw-bold mb-3">Selamat Datang di Rasa Nusantara</h1>
+                <p class="lead mb-4">Menyajikan Cita Rasa Otentik Kuliner Tradisional & Minuman Segar Khas Indonesia</p>
+                <a href="#menu-makanan" class="btn btn-danger btn-lg px-4 py-2 rounded-pill shadow">Lihat Menu
+                    Lengkap</a>
+            </div>
+        </header>
+
+        <!-- ============================================================
+         MENU 2: MENU MAKANAN & MINUMAN
+         ============================================================ -->
+        <section id="menu-makanan" class="bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-uppercase">Menu Makanan & Minuman</h2>
+                    <div class="section-title-line"></div>
+                    <p class="text-muted mt-2">Hidangan lezat dan minuman segar pilihan paling terfavorit para pelanggan
+                        loyal kami</p>
+                </div>
+
+                <!-- ------------------------------------------------------------
+             SUB-SEKSI 1: MENU MAKANAN UTAMA
+             ------------------------------------------------------------ -->
+                <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-2">
+                    <h4 class="fw-bold text-dark mb-0"><i class="bi bi-egg-fried text-danger me-2"></i>Menu Makanan
+                        Utama</h4>
+                    <span class="badge bg-danger text-white menu-section-badge">Resep Tradisional</span>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <!-- Makanan 1: Nasi Goreng Spesial -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Favorit
+                                #1</span>
+                            <!-- TEMPEL LINK FOTO NASI GORENG GOOGLE DI DALAM SRC DI BAWAH INI -->
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.BTaHIspxb6W9_1yqY25FPwHaEc?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Nasi Goreng Spesial">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (120+)</span>
+                                    <small class="text-muted"><i class="bi bi-fire text-danger me-1"></i>Spesial
+                                        Rempah</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Nasi Goreng Spesial</h5>
+                                <p class="card-text text-muted flex-grow-1">Nasi goreng bumbu racik tradisional dengan
+                                    topping telur, ayam suwir, sosis, dan kerupuk udang renyah.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 25.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Nasi Goreng Spesial', 25000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 2: Sate Ayam Madura -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Chef
+                                Pick</span>
+                            <!-- TEMPEL LINK FOTO SATE GOOGLE DI DALAM SRC DI BAWAH INI -->
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.A3S6isB0Oen7R2aTCZiztAHaE8?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Sate Ayam Madura">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.8
+                                        (98+)</span>
+                                    <small class="text-muted"><i class="bi bi-shield-check text-success me-1"></i>10
+                                        Tusuk</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Sate Ayam Madura</h5>
+                                <p class="card-text text-muted flex-grow-1">10 Tusuk sate daging ayam pilihan yang empuk
+                                    dibalut dengan bumbu kacang kental gurih khas Madura.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 28.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Sate Ayam Madura', 28000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 3: Gado-Gado Betawi -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-success position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Fresh
+                                & Veggie</span>
+                            <!-- TEMPEL LINK FOTO GADO-GADO GOOGLE DI DALAM SRC DI BAWAH INI -->
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.0w5boWVY1qgvdU-Xj8zf5QHaE8?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Gado-Gado Betawi">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (85+)</span>
+                                    <small class="text-muted"><i class="bi bi-heart-fill text-danger me-1"></i>Sayur
+                                        Segar</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Gado-Gado Betawi</h5>
+                                <p class="card-text text-muted flex-grow-1">Sayuran segar rebus berpadu dengan tahu,
+                                    tempe, telur rebus dan siraman bumbu kacang khas racikan rahasia.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 20.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Gado-Gado Betawi', 20000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 4: Nasi Ayam Liwet -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">New
+                                Menu</span>
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.d35_POqqV_x2s9WKo-OpLwHaFj?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Nasi Ayam Liwet">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (70+)</span>
+                                    <small class="text-muted"><i class="bi bi-fire text-danger me-1"></i>Khas
+                                        Solo</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Nasi Ayam Liwet</h5>
+                                <p class="card-text text-muted flex-grow-1">Nasi liwet gurih khas Solo dimasak dengan
+                                    santan dan rempah, disajikan dengan ayam suwir, telur, dan lalapan segar.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 40.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Nasi Ayam Liwet', 40000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 5: Ikan Gurame Asam Manis -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-info text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Seafood</span>
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.IVa_dzfI9JdZxpaD0fCkvwHaFP?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Ikan Gurame Asam Manis">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.8
+                                        (65+)</span>
+                                    <small class="text-muted"><i class="bi bi-heart-fill text-danger me-1"></i>Gurih
+                                        Segar</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Ikan Gurame Asam Manis</h5>
+                                <p class="card-text text-muted flex-grow-1">Ikan gurame segar digoreng renyah dengan
+                                    siraman saus asam manis spesial yang menggugah selera.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 50.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Ikan Gurame Asam Manis', 50000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 6: Ikan Nila Arsik Khas Batak -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-success position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Khas
+                                Batak</span>
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.08LOrjXVZoa5kpFVqGgyaQHaEK?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Ikan Nila Arsik Khas Batak">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (55+)</span>
+                                    <small class="text-muted"><i class="bi bi-fire text-danger me-1"></i>Rempah
+                                        Kuat</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Ikan Nila Arsik Khas Batak</h5>
+                                <p class="card-text text-muted flex-grow-1">Ikan nila segar dimasak dengan bumbu arsik
+                                    khas Batak yang kaya rempah andaliman, kunyit, dan lengkuas.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 50.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Ikan Nila Arsik Khas Batak', 50000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 7: Mie Aceh -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Pedas Gurih</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJLH9fZr2I0NRhSEXJbWlisMWyrbdNr2rrV_ldLGKIMA&s=10"
+                                class="card-img-top" alt="Mie Aceh">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (85+)</span>
+                                    <small class="text-muted"><i class="bi bi-fire text-danger me-1"></i>Khas Aceh</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Mie Aceh</h5>
+                                <p class="card-text text-muted flex-grow-1">Mie kuning tebal dengan irisan daging sapi, daging kambing, atau makanan laut disajikan dalam sup sejenis kari yang gurih dan pedas.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 35.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Mie Aceh', 35000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 8: Soto Khas Banjar -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Rempah</span>
+                            <img src="https://indonesiakaya.com/wp-content/uploads/2023/04/sb_Artboard_5.jpg"
+                                class="card-img-top" alt="Soto Khas Banjar">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.8
+                                        (70+)</span>
+                                    <small class="text-muted"><i class="bi bi-heart-fill text-danger me-1"></i>Khas Banjar</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Soto Khas Banjar</h5>
+                                <p class="card-text text-muted flex-grow-1">Soto ayam khas Kalimantan Selatan dengan bumbu utama kayu manis, biji pala, dan cengkih, disajikan dengan perkedel dan ketupat.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 30.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Soto Khas Banjar', 30000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Makanan 9: Rendang Khas Padang -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Legendaris</span>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmvk-ROkIN7Dph4vYYmqg4dyKjAx9iQ1cY_4SRIKRJmQ&s=10"
+                                class="card-img-top" alt="Rendang Khas Padang">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>5.0
+                                        (200+)</span>
+                                    <small class="text-muted"><i class="bi bi-star-fill text-warning me-1"></i>Khas Padang</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Rendang Khas Padang</h5>
+                                <p class="card-text text-muted flex-grow-1">Olahan daging sapi dengan bumbu rempah-rempah yang dimasak perlahan hingga menghasilkan tekstur empuk dan cita rasa kaya.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 45.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Rendang Khas Padang', 45000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ------------------------------------------------------------
+             SUB-SEKSI 2: MENU MINUMAN SEGAR
+             ------------------------------------------------------------ -->
+                <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-2">
+                    <h4 class="fw-bold text-dark mb-0"><i class="bi bi-cup-straw text-primary me-2"></i>Menu Minuman
+                        Segar</h4>
+                    <span class="badge bg-primary text-white menu-section-badge">Dingin & Manis</span>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Minuman 1: Es Teler Spesial -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-info text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Favorit
+                                Segar</span>
+                            <!-- TEMPEL LINK FOTO ES TELER GOOGLE DI DALAM SRC DI BAWAH INI -->
+                            <img src="https://akurat.sgp1.cdn.digitaloceanspaces.com/images/20260227-9517902463-0-es2bteler2bmutiara2b252812529.jpg"
+                                class="card-img-top" alt="Es Teler Spesial Nusantara">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (150+)</span>
+                                    <small class="text-muted"><i class="bi bi-snow text-info me-1"></i>Buah
+                                        Segar</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Es Teler Spesial Nusantara</h5>
+                                <p class="card-text text-muted flex-grow-1">Perpaduan alpukat matang, nangka segar,
+                                    kelapa muda, dan siraman susu manis gurih nikmat.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 18.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Es Teler Spesial Nusantara', 18000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Minuman 2: Es Jeruk Peras Segar -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Vit
+                                C Fresh</span>
+                            <!-- TEMPEL LINK FOTO ES JERUK GOOGLE DI DALAM SRC DI BAWAH INI -->
+                            <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=600&auto=format&fit=crop"
+                                class="card-img-top" alt="Es Jeruk Segar">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.8
+                                        (80+)</span>
+                                    <small class="text-muted"><i class="bi bi-sun text-warning me-1"></i>Jeruk
+                                        Peras</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Es Jeruk Peras Segar</h5>
+                                <p class="card-text text-muted flex-grow-1">Perasan jeruk peras asli kaya vitamin C
+                                    dengan es batu dingin yang pas melepaskan dahaga.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 12.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Es Jeruk Peras Segar', 12000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Minuman 3: Es Teh Manis Jumbo -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-success position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Laris
+                                Manis</span>
+                            <!-- TEMPEL LINK FOTO ES TEH GOOGLE DI DALAM SRC DI BAWAH INI -->
+                            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=600&auto=format&fit=crop"
+                                class="card-img-top" alt="Es Teh Manis Jumbo">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (300+)</span>
+                                    <small class="text-muted"><i class="bi bi-cup text-success me-1"></i>Teh
+                                        Melati</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Es Teh Manis Jumbo</h5>
+                                <p class="card-text text-muted flex-grow-1">Seduhan teh melati wangi khas Solo dengan
+                                    gula asli dan es dingin kemasan porsi jumbo.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 10.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Es Teh Manis Jumbo', 10000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ------------------------------------------------------------
+             SUB-SEKSI 3: MENU DESSERT
+             ------------------------------------------------------------ -->
+                <div class="d-flex align-items-center justify-content-between mb-4 mt-5 border-bottom pb-2">
+                    <h4 class="fw-bold text-dark mb-0"><i class="bi bi-cake2 text-success me-2"></i>Menu Dessert</h4>
+                    <span class="badge bg-success text-white menu-section-badge">Manis & Segar</span>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Dessert 1: Es Campur Nusantara -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-info text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Dessert
+                                Favorit</span>
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.SFCFW9vnXwTfmoSW0kH9DgHaE8?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Es Campur Nusantara">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.9
+                                        (110+)</span>
+                                    <small class="text-muted"><i class="bi bi-snow text-info me-1"></i>Dingin
+                                        Segar</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Es Campur Nusantara</h5>
+                                <p class="card-text text-muted flex-grow-1">Campuran buah segar, cincau hitam,
+                                    kolang-kaling, nangka, dan alpukat dengan siraman susu dan es serut yang
+                                    menyegarkan.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 15.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Es Campur Nusantara', 15000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dessert 2: Klepon Pandan -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-success position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Tradisional</span>
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.LTYmiMbGXFdGnVuur7lgRAHaFa?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Klepon Pandan">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.8
+                                        (95+)</span>
+                                    <small class="text-muted"><i class="bi bi-heart-fill text-danger me-1"></i>Kue
+                                        Tradisional</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Klepon Pandan</h5>
+                                <p class="card-text text-muted flex-grow-1">Bola-bola ketan pandan isi gula merah leleh
+                                    yang dibalut parutan kelapa segar. Manis dan legit khas Jawa.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 10.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Klepon Pandan', 10000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dessert 3: Dadar Gulung Kelapa -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm position-relative">
+                            <span
+                                class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Chef
+                                Pick</span>
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.VfY_W2IKNS7TpPfTt8hdcAHaE8?r=0&pid=Api&h=220&P=0"
+                                class="card-img-top" alt="Dadar Gulung Kelapa">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark"><i class="bi bi-star-fill me-1"></i>4.7
+                                        (78+)</span>
+                                    <small class="text-muted"><i class="bi bi-flower1 text-success me-1"></i>Pandan
+                                        Kelapa</small>
+                                </div>
+                                <h5 class="card-title fw-bold">Dadar Gulung Kelapa</h5>
+                                <p class="card-text text-muted flex-grow-1">Crepe pandan lembut berisi kelapa parut yang
+                                    dimasak dengan gula merah. Camilan manis tradisional yang menggugah selera.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="fw-bold text-danger fs-5">Rp 12.000</span>
+                                    <a href="#pemesanan" onclick="orderItem('Dadar Gulung Kelapa', 12000)"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-3">Pesan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         MENU 3: PAKET HEMAT
+         ============================================================ -->
+        <section id="paket-hemat">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-uppercase">Paket Hemat</h2>
+                    <div class="section-title-line"></div>
+                    <p class="text-muted mt-2">Makan puas, dompet ceria dengan menu kombinasi kami</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Paket 1 -->
+                    <div class="col-md-5">
+                        <div class="card p-3 border-danger border shadow-sm">
+                            <div class="card-body">
+                                <span class="badge bg-danger mb-2">Best Seller</span>
+                                <h4 class="fw-bold">Paket Puas A</h4>
+                                <p class="text-muted mb-3">Nasi Putih + Ayam Bakar Taliwang + Es Teh Manis Jumbo</p>
+                                <hr>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <del class="text-muted">Rp 40.000</del>
+                                    <span class="fw-bold text-danger fs-4">Rp 30.000</span>
+                                </div>
+                                <a href="#pemesanan" onclick="orderItem('Paket Puas A', 30000)"
+                                    class="btn btn-danger w-100 mt-3 rounded-pill">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paket 2 -->
+                    <div class="col-md-5">
+                        <div class="card p-3 border-danger border shadow-sm">
+                            <div class="card-body">
+                                <span class="badge bg-danger mb-2">Hemat Banget</span>
+                                <h4 class="fw-bold">Paket Puas B</h4>
+                                <p class="text-muted mb-3">Nasi Goreng + Telur Ceplok + Es Jeruk Peras Segar</p>
+                                <hr>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <del class="text-muted">Rp 35.000</del>
+                                    <span class="fw-bold text-danger fs-4">Rp 27.000</span>
+                                </div>
+                                <a href="#pemesanan" onclick="orderItem('Paket Puas B', 27000)"
+                                    class="btn btn-danger w-100 mt-3 rounded-pill">Pesan Paket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         MENU 4: GALERI
+         ============================================================ -->
+        <section id="galeri" class="bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-uppercase">Galeri Restoran</h2>
+                    <div class="section-title-line"></div>
+                    <p class="text-muted mt-2">Suasana restoran dan proses penyajian terbaik kami</p>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <!-- TEMPEL LINK FOTO GALERI 1 GOOGLE DI DALAM SRC DI BAWAH INI -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb9OkpcH4ur4ZQ8Eq3cGwD9PH81F6VN_lyVqoHhaclKA&s=10"
+                            class="img-fluid rounded gallery-img shadow-sm" alt="Suasana Resto 1">
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <!-- TEMPEL LINK FOTO GALERI 2 GOOGLE DI DALAM SRC DI BAWAH INI -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt6cSmMhDYNFYEJqAE02XCLKhKHzymszk88p7PGloHfQ&s=10"
+                            class="img-fluid rounded gallery-img shadow-sm" alt="Suasana Resto 2">
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <!-- TEMPEL LINK FOTO GALERI 3 GOOGLE DI DALAM SRC DI BAWAH INI -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzekIwSRKiISrJnrOjJok9AYPzG05WQq62_2qd4AIA6Q&s=10"
+                            class="img-fluid rounded gallery-img shadow-sm" alt="Masakan">
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <!-- TEMPEL LINK FOTO GALERI 4 GOOGLE DI DALAM SRC DI BAWAH INI -->
+                        <img src="https://i.pinimg.com/236x/ef/5c/10/ef5c10d086c499b956beb99b614cac63.jpg"
+                            class="img-fluid rounded gallery-img shadow-sm" alt="Pelayanan">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         MENU 5: TENTANG KAMI
+         ============================================================ -->
+        <section id="tentang-kami">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <!-- TEMPEL LINK FOTO PROFIL RESTORAN GOOGLE DI DALAM SRC DI BAWAH INI -->
+                        <img src="https://awsimages.detik.net.id/community/media/visual/2023/10/27/omah-yung-ginah-14_169.jpeg?w=600&q=90"
+                            class="img-fluid rounded-3 shadow" alt="Tentang Resto">
+                    </div>
+                    <div class="col-lg-6">
+                        <span class="text-danger fw-bold text-uppercase">Profil Restoran</span>
+                        <h2 class="fw-bold my-3">Rasa Nusantara Melayani dengan Sepenuh Hati</h2>
+                        <p class="text-muted">Didirikan sejak bertahun-tahun lalu, kami berkomitmen untuk melestarikan
+                            keanekaragaman masakan Nusantara. Menggunakan resep turun-temurun asli Indonesia dengan
+                            bahan baku rempah lokal yang fresh.</p>
+                        <p class="text-muted">Proyek website ini dikembangkan oleh <strong>Kelompok 4</strong> sebagai
+                            tugas praktik pembuatan website responsif interaktif.</p>
+
+                        <div class="p-3 bg-light rounded border-start border-danger border-4 shadow-sm">
+                            <h6 class="fw-bold mb-2"><i class="bi bi-people-fill text-danger me-2"></i>Anggota Kelompok
+                                4:</h6>
+                            <p class="mb-0 text-dark small fw-semibold">
+                                Aurel Kasi &bull; Tri Agristania Putri &bull; Meyshila Manja Ayudia &bull; Regi Pratama
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         MENU 6: PEMESANAN
+         ============================================================ -->
+        <section id="pemesanan" class="bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-uppercase">Formulir Pemesanan</h2>
+                    <div class="section-title-line"></div>
+                    <p class="text-muted mt-2">Pesan makanan & minuman favorit Anda dengan mudah secara online (bisa
+                        memilih lebih dari 1 menu)</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-9">
+                        <div class="card p-4 shadow-sm border-0 rounded-4">
+                            <form id="orderForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="namaLengkap" class="form-label fw-semibold">Nama Lengkap</label>
+                                        <input type="text" id="namaLengkap" class="form-control"
+                                            placeholder="Masukkan nama Anda" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="noWhatsapp" class="form-label fw-semibold">Nomor WhatsApp</label>
+                                        <input type="tel" id="noWhatsapp" class="form-control"
+                                            placeholder="Contoh: 081234567xxx" required>
+                                    </div>
+
+                                    <!-- Multi-Item Selector & Dynamic Order List -->
+                                    <div class="col-md-12">
+                                        <label class="form-label fw-semibold">Pilih Menu / Pesanan</label>
+                                        <div class="input-group mb-3">
+                                            <select id="pilihMenuSelect" class="form-select">
+                                                <option value="" selected disabled>-- Pilih Makanan, Minuman, atau Paket
+                                                    --</option>
+                                                <optgroup label="🍽️ Makanan Utama">
+                                                    <option value="Nasi Goreng Spesial" data-price="25000">Nasi Goreng
+                                                        Spesial (Rp 25.000)</option>
+                                                    <option value="Sate Ayam Madura" data-price="28000">Sate Ayam Madura
+                                                        (Rp 28.000)</option>
+                                                    <option value="Gado-Gado Betawi" data-price="20000">Gado-Gado Betawi
+                                                        (Rp 20.000)</option>
+                                                    <option value="Nasi Ayam Liwet" data-price="40000">Nasi Ayam Liwet
+                                                        (Rp 40.000)</option>
+                                                    <option value="Ikan Gurame Asam Manis" data-price="50000">Ikan
+                                                        Gurame Asam Manis (Rp 50.000)</option>
+                                                    <option value="Ikan Nila Arsik Khas Batak" data-price="50000">Ikan
+                                                        Nila Arsik Khas Batak (Rp 50.000)</option>
+                                                    <option value="Mie Aceh" data-price="35000">Mie Aceh (Rp 35.000)</option>
+                                                    <option value="Soto Khas Banjar" data-price="30000">Soto Khas Banjar (Rp 30.000)</option>
+                                                    <option value="Rendang Khas Padang" data-price="45000">Rendang Khas Padang (Rp 45.000)</option>
+                                                </optgroup>
+                                                <optgroup label="🍹 Minuman Segar">
+                                                    <option value="Es Teler Spesial Nusantara" data-price="18000">Es
+                                                        Teler Spesial Nusantara (Rp 18.000)</option>
+                                                    <option value="Es Jeruk Peras Segar" data-price="12000">Es Jeruk
+                                                        Peras Segar (Rp 12.000)</option>
+                                                    <option value="Es Teh Manis Jumbo" data-price="10000">Es Teh Manis
+                                                        Jumbo (Rp 10.000)</option>
+                                                </optgroup>
+                                                <optgroup label="🍰 Dessert">
+                                                    <option value="Es Campur Nusantara" data-price="15000">Es Campur
+                                                        Nusantara (Rp 15.000)</option>
+                                                    <option value="Klepon Pandan" data-price="10000">Klepon Pandan (Rp
+                                                        10.000)</option>
+                                                    <option value="Dadar Gulung Kelapa" data-price="12000">Dadar Gulung
+                                                        Kelapa (Rp 12.000)</option>
+                                                </optgroup>
+                                                <optgroup label="⭐ Paket Hemat">
+                                                    <option value="Paket Puas A" data-price="30000">Paket Puas A (Rp
+                                                        30.000)</option>
+                                                    <option value="Paket Puas B" data-price="27000">Paket Puas B (Rp
+                                                        27.000)</option>
+                                                </optgroup>
+                                            </select>
+                                            <button type="button" id="btnTambahMenu" class="btn btn-danger px-4">
+                                                <i class="bi bi-plus-circle me-1"></i> Tambah Menu
+                                            </button>
+                                        </div>
+
+                                        <!-- Selected Items Container / Cart -->
+                                        <div class="card bg-white border p-3 rounded-3 mb-3">
+                                            <div
+                                                class="d-flex justify-content-between align-items-center mb-2 border-bottom pb-2">
+                                                <h6 class="fw-bold mb-0 text-dark"><i
+                                                        class="bi bi-cart-check text-danger me-2"></i>Daftar Pesanan
+                                                    Anda</h6>
+                                                <span id="badgeJumlahItem" class="badge bg-secondary">0 Item</span>
+                                            </div>
+
+                                            <div id="containerPesananKosong" class="text-center py-4 text-muted">
+                                                <i class="bi bi-basket fs-1 text-secondary opacity-50 d-block mb-2"></i>
+                                                <small>Belum ada menu yang dipilih. Silakan pilih menu pada dropdown di
+                                                    atas atau klik tombol <b>Pesan</b> pada daftar menu makanan!</small>
+                                            </div>
+
+                                            <div id="tablePesananWrapper" style="display: none;">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover align-middle mb-0 bg-white">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th>Menu Pesanan</th>
+                                                                <th class="text-center" style="width: 140px;">Jumlah
+                                                                </th>
+                                                                <th class="text-end">Harga Satuan</th>
+                                                                <th class="text-end">Subtotal</th>
+                                                                <th class="text-center" style="width: 50px;">Aksi</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="listPesanan">
+                                                            <!-- Dynamic items will be added here -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                                                    <span class="fw-bold text-dark fs-6">Total Pembayaran:</span>
+                                                    <span id="totalHargaPemesanan" class="fw-bold fs-4 text-danger">Rp
+                                                        0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="alamatPengiriman" class="form-label fw-semibold">Alamat Pengiriman
+                                            Lengkap</label>
+                                        <textarea id="alamatPengiriman" class="form-control" rows="3"
+                                            placeholder="Tulis alamat rumah lengkap..." required></textarea>
+                                    </div>
+                                    <div class="col-md-12 text-center mt-4">
+                                        <button type="submit"
+                                            class="btn btn-danger px-5 py-2 shadow-sm rounded-pill fs-5 fw-semibold">
+                                            <i class="bi bi-whatsapp me-2"></i>Kirim Pesanan Sekarang
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+       MENU 7: KONTAK & FOOTER
+       ============================================================ -->
+    <footer id="kontak" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-danger mb-3"><i class="bi bi-egg-fried me-2"></i>Rasa Nusantara</h5>
+                    <p class="text-secondary">Menyediakan hidangan & minuman terbaik Indonesia dengan cita rasa tiada
+                        banding. Kunjungi gerai terdekat kami.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-white mb-3">Hubungi Kami</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i> Jl. Tengku Amir Hamzah, No
+                            45 stabat </li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill text-danger me-2"></i> +62 895326388715</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill text-danger me-2"></i> info@rasanusantara.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-white mb-3">Jam Operasional</h5>
+                    <p class="mb-1 text-secondary">Senin - Jumat: 09.00 - 21.00 WIB</p>
+                    <p class="text-secondary">Sabtu - Minggu: 10.00 - 22.00 WIB</p>
+                </div>
+            </div>
+
+            <hr class="bg-secondary">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start text-secondary mb-2 mb-md-0">
+                    <small>&copy; 2026 Rasa Nusantara. All Rights Reserved.</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-secondary">
+                    <small>Project Website Native HTML & CSS Kelas XII - <strong class="text-white">Kelompok
+                            4</strong></small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Penanganan Form Pemesanan Multi-Item ke WhatsApp -->
+    <script>
+        let selectedItems = [];
+
+        function formatRupiah(number) {
+            return 'Rp ' + number.toLocaleString('id-ID');
+        }
+
+        function orderItem(name, price) {
+            addItem(name, price);
+            const orderSection = document.getElementById('pemesanan');
+            if (orderSection) {
+                orderSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function addItem(name, price) {
+            const existingIndex = selectedItems.findIndex(item => item.name === name);
+            if (existingIndex > -1) {
+                selectedItems[existingIndex].qty += 1;
+            } else {
+                selectedItems.push({ name: name, price: price, qty: 1 });
+            }
+            renderOrderList();
+        }
+
+        function updateQty(index, change) {
+            selectedItems[index].qty += change;
+            if (selectedItems[index].qty <= 0) {
+                selectedItems.splice(index, 1);
+            }
+            renderOrderList();
+        }
+
+        function removeItem(index) {
+            selectedItems.splice(index, 1);
+            renderOrderList();
+        }
+
+        function renderOrderList() {
+            const listBody = document.getElementById('listPesanan');
+            const containerKosong = document.getElementById('containerPesananKosong');
+            const tableWrapper = document.getElementById('tablePesananWrapper');
+            const badgeJumlah = document.getElementById('badgeJumlahItem');
+            const totalHargaElement = document.getElementById('totalHargaPemesanan');
+
+            if (selectedItems.length === 0) {
+                containerKosong.style.display = 'block';
+                tableWrapper.style.display = 'none';
+                badgeJumlah.textContent = '0 Item';
+                badgeJumlah.className = 'badge bg-secondary';
+                return;
+            }
+
+            containerKosong.style.display = 'none';
+            tableWrapper.style.display = 'block';
+
+            let totalQty = 0;
+            let grandTotal = 0;
+            let html = '';
+
+            selectedItems.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                totalQty += item.qty;
+                grandTotal += subtotal;
+
+                html += `
+          <tr>
+            <td class="fw-semibold">${item.name}</td>
+            <td class="text-center">
+              <div class="input-group input-group-sm justify-content-center" style="max-width: 120px; margin: 0 auto;">
+                <button class="btn btn-outline-secondary" type="button" onclick="updateQty(${index}, -1)">-</button>
+                <span class="input-group-text bg-white px-3 fw-bold">${item.qty}</span>
+                <button class="btn btn-outline-secondary" type="button" onclick="updateQty(${index}, 1)">+</button>
+              </div>
+            </td>
+            <td class="text-end text-muted">${formatRupiah(item.price)}</td>
+            <td class="text-end fw-bold text-danger">${formatRupiah(subtotal)}</td>
+            <td class="text-center">
+              <button class="btn btn-link text-danger p-0" type="button" onclick="removeItem(${index})" title="Hapus">
+                <i class="bi bi-trash fs-5"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+            });
+
+            listBody.innerHTML = html;
+            badgeJumlah.textContent = `${totalQty} Item`;
+            badgeJumlah.className = 'badge bg-danger';
+            totalHargaElement.textContent = formatRupiah(grandTotal);
+        }
+
+        document.getElementById('btnTambahMenu').addEventListener('click', function () {
+            const select = document.getElementById('pilihMenuSelect');
+            const selectedOption = select.options[select.selectedIndex];
+            if (!select.value || selectedOption.disabled) {
+                alert('Silakan pilih menu dari dropdown terlebih dahulu!');
+                return;
+            }
+            const name = selectedOption.value;
+            const price = parseInt(selectedOption.getAttribute('data-price'));
+            addItem(name, price);
+            select.selectedIndex = 0;
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (selectedItems.length === 0) {
+                alert('Silakan pilih setidaknya 1 menu sebelum mengirim pesanan!');
+                return;
+            }
+
+            const nama = document.getElementById('namaLengkap').value;
+            const noWa = document.getElementById('noWhatsapp').value;
+            const alamat = document.getElementById('alamatPengiriman').value;
+
+            let totalBayar = 0;
+            let daftarPesananText = '';
+
+            selectedItems.forEach((item, i) => {
+                const subtotal = item.price * item.qty;
+                totalBayar += subtotal;
+                daftarPesananText += `${i + 1}. ${item.name} x${item.qty} (${formatRupiah(subtotal)})%0A`;
+            });
+
+            const nomorTujuan = "62895326388715";
+
+            const pesan = `Halo Rasa Nusantara, saya ingin memesan:%0A%0A` +
+                `*Nama:* ${nama}%0A` +
+                `*No WA:* ${noWa}%0A%0A` +
+                `*Rincian Pesanan:*%0A${daftarPesananText}%0A` +
+                `*Total Pembayaran:* ${formatRupiah(totalBayar)}%0A%0A` +
+                `*Alamat Pengiriman:* ${alamat}%0A%0A` +
+                `Mohon segera diproses, terima kasih!`;
+
+            const linkWhatsapp = `https://wa.me/${nomorTujuan}?text=${pesan}`;
+            window.open(linkWhatsapp, '_blank');
+
+            this.reset();
+            selectedItems = [];
+            renderOrderList();
+        });
+    </script>
+</body>
+
+</html>
